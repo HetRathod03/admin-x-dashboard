@@ -1,0 +1,51 @@
+.layout{
+    display:flex;
+    min-height:100vh;
+    position:relative;
+}
+
+.main-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    transition:.3s;
+}
+
+.page-content{
+    flex:1;
+    padding:20px;
+    background:var(--bg);
+    overflow-x:auto;
+}
+
+.sidebar-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:998;
+}
+/* =========== Teblet ============ */
+@media(max-width:992px){
+
+.layout{
+    display:block;
+}
+
+.main-content{
+    width:100%;
+}
+
+.page-content{
+    padding:8px;
+}
+
+}
+/* ============= Small Mobile ============ */
+@media(max-width:480px){
+
+.page-content{
+    padding:4px;
+}
+
+}

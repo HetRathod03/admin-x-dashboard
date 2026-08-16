@@ -1,0 +1,337 @@
+/* ================= RECENT CUSTOMERS ================= */
+
+.recent-customers {
+    margin-top: 35px;
+    background: var(--card);
+    color: var(--text);
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    transition: .35s ease;
+}
+
+.recent-customers:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .15);
+}
+
+
+/* ================= HEADER ================= */
+
+.recent-customers-header {
+    margin-bottom: 24px;
+}
+
+.recent-customers-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+
+.recent-customers-subtitle {
+    margin-top: 6px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.recent-customers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.view-customers-btn {
+        padding:10px 18px;
+    border:none;
+    border-radius:10px;
+    background:var(--primary);
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    text-decoration:none;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.view-customers-btn:hover {
+  transform:translateY(-2px);
+    opacity:.95;
+}
+/* ================= DESKTOP TABLE ================= */
+
+.recent-customers-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.recent-customers-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-customers-table th {
+    background: rgba(37, 99, 235, .08);
+    color: var(--text);
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.recent-customers-table td {
+    padding: 15px;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.recent-customers-table tbody tr {
+    transition: .3s;
+}
+
+.recent-customers-table tbody tr:hover {
+    background: rgba(37, 99, 235, .08);
+}
+
+
+/* ================= MOBILE CARDS ================= */
+
+.recent-customers-list {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.customer-card-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 16px;
+    background: var(--card);
+    border: 1px solid transparent;
+    transition: .3s;
+}
+
+.customer-card-item:hover {
+    background: rgba(37, 99, 235, .05);
+    border-color: rgba(37, 99, 235, .15);
+}
+
+.customer-card-image {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--input);
+    color: var(--text);
+    font-weight: 600;
+}
+
+.customer-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.customer-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.customer-card-name {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+    flex: 1;
+    min-width: 0;
+}
+
+.customer-card-city {
+    font-size: 12px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    background: rgba(37, 99, 235, .08);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.customer-card-email {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+}
+
+
+.customer-card-id{
+    width:60px;
+    height:60px;
+    min-width:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(37,99,235,.08);
+    color:var(--primary);
+    font-size:14px;
+    font-weight:700;
+    border:2px solid var(--border);
+}
+.recent-customers-table td:first-child{
+    font-weight:700;
+    color:var(--text);
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+    .recent-customers {
+        padding: 20px;
+    }
+
+    .recent-customers-table th,
+    .recent-customers-table td {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .recent-customers {
+        padding: 18px;
+        margin-top: 25px;
+    }
+
+    .recent-customers-title {
+        font-size: 22px;
+    }
+
+    .recent-customers-subtitle {
+        font-size: 13px;
+    }
+
+    .recent-customers-header {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+    }
+    .view-customers-btn{
+        width:100%;
+    }
+
+    .recent-customers-table-wrapper {
+        display: none;
+    }
+
+    .recent-customers-list {
+        display: flex;
+    }
+
+    .customer-card-item {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .customer-card-id{
+    width:55px;
+    height:55px;
+    min-width:55px;
+    font-size:13px;
+}
+
+    .customer-card-name {
+        font-size: 14px;
+    }
+
+    .customer-card-city {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+
+    .customer-card-email {
+        font-size: 12px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .recent-customers {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .recent-customers-title {
+        font-size: 20px;
+    }
+
+    .recent-customers-subtitle {
+        font-size: 12px;
+    }
+
+    .recent-customers-header {
+        margin-bottom: 15px;
+    }
+
+    .customer-card-item {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .customer-card-id{
+    width:50px;
+    height:50px;
+    min-width:50px;
+    font-size:12px;
+}
+
+    .customer-card-top {
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+
+    .customer-card-name {
+        font-size: 13px;
+    }
+
+    .customer-card-city {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+
+    .customer-card-email {
+        font-size: 11px;
+    }
+}
+@media (min-width: 769px) {
+    .recent-customers-table td {
+        color: var(--text);
+        font-weight: 500;
+    }
+}   

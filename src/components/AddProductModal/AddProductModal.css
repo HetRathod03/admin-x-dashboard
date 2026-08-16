@@ -1,0 +1,251 @@
+/* ================= ADD PRODUCT OVERLAY ================= */
+
+.add-product-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 999;
+    backdrop-filter: blur(3px);
+}
+/* ================= MODAL ================= */
+
+.add-product-modal {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+/* ================= CLOSE BUTTON ================= */
+
+.add-product-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 22px;
+    font-weight: 600;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;   
+}
+
+.add-product-close-btn:hover {
+       background: #dc2626;
+    color: #fff;
+}
+
+/* ================= HEADING ================= */
+
+.add-product-modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text);
+    font-size: 22px;
+}
+
+
+/* ================= FORM ================= */
+
+.add-product-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ================= INPUTS ================= */
+
+.add-product-modal input,
+.add-product-modal select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    background: var(--input);
+    color: var(--text);
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.add-product-modal input::placeholder {
+    color: var(--text-secondary);
+}
+
+.add-product-modal input:focus,
+.add-product-modal select:focus {
+    border-color: var(--primary);
+
+    box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+
+/* ================= FILE UPLOAD ================= */
+
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file-upload label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.file-upload input[type="file"] {
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+/* ================= IMAGE PREVIEW ================= */
+
+.image-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 160px;
+}
+
+.image-preview img {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--input);
+}
+
+
+/* ================= BUTTONS ================= */
+
+.add-product-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.add-product-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
+/* Add / Update */
+
+.add-product-buttons button[type="submit"] {
+    background: var(--primary);
+    color: #fff;
+}
+
+.add-product-buttons button[type="submit"]:hover {
+    background: var(--primary-dark);
+}
+
+
+/* Cancel */
+
+.add-product-buttons button[type="button"] {
+    background: #ef4444;
+    color: #fff;
+}
+
+.add-product-buttons button[type="button"]:hover {
+    background: #dc2626;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .add-product-overlay {
+        padding: 15px;
+        align-items: center;
+    }
+
+    .add-product-modal {
+        width: 92%;
+        max-height: 90vh;
+
+        padding: 20px;
+    }
+
+    .add-product-modal h2 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .add-product-buttons {
+        flex-direction: column;
+    }
+
+    .image-preview img {
+        width: 180px;
+        height: 140px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 400px) {
+
+    .add-product-overlay {
+        padding: 10px;
+    }
+
+    .add-product-modal {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .add-product-modal form {
+        gap: 12px;
+    }
+
+    .add-product-modal input,
+    .add-product-modal select {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .image-preview img {
+        width: 160px;
+        height: 120px;
+    }
+
+    .add-product-close-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+}

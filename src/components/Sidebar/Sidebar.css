@@ -1,0 +1,150 @@
+.sidebar{
+    width:260px;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    background:var(--card);
+    color:var(--text);
+
+    padding:20px;
+
+    position:sticky;
+    top:0;
+
+    border-right:1px solid var(--border);
+
+    transition:.3s;
+}
+
+.sidebar-top{
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar-logo{
+    text-align:center;
+}
+
+.sidebar-logo h2{
+    font-size:28px;
+    letter-spacing:1px;
+    color:var(--text);
+}
+
+.sidebar-menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:40px;
+}
+
+.sidebar-link{
+    text-decoration:none;
+    color:var(--text-secondary);
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:14px 18px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.sidebar-link:hover{
+    background:var(--primary);
+    color:#fff;
+}
+
+.sidebar-link.active{
+    background:var(--primary);
+    color:#fff;
+}
+
+.logout-btn{
+    border:none;
+    margin-top:auto;
+    background:transparent;
+
+    color:var(--text);
+
+    padding:14px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.logout-btn:hover{
+    background:#dc2626;
+    color:#fff;
+}
+
+/* Overlay */
+
+.sidebar-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:998;
+}
+
+/* ================= TABLET + MOBILE ================= */
+
+@media(max-width:1280px){
+
+.sidebar{
+    position:fixed;
+
+    top:0;
+    left:-280px;
+
+    width:260px;
+    height:100vh;
+
+    overflow-y:auto;
+
+    z-index:999;
+
+    transition:left .3s ease;
+}
+
+.sidebar.open{
+    left:0;
+}
+
+.menu-btn{
+    display:block;
+}
+
+}
+
+/* ================= DESKTOP ================= */
+
+@media(min-width:1281px){
+
+.menu-btn{
+    display:none;
+}
+
+.sidebar{
+    position:sticky;
+    top:0;
+    left:0 !important;
+}
+
+.sidebar-overlay{
+    display:none;
+}
+
+}

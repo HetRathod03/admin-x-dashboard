@@ -1,0 +1,180 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+   LIGHT THEME
+========================= */
+
+:root{
+
+    --bg:#f8fafc;
+
+    --card:#ffffff;
+
+    --text:#111827;
+
+    --text-secondary:#6b7280;
+
+    --border:#e5e7eb;
+
+    --input:#ffffff;
+
+    --table-head:#f5f5f5;
+
+    --shadow:0 5px 15px rgba(0,0,0,.08);
+    
+    --success:#16a34a;
+
+    --warning:#f59e0b;
+
+    --danger:#ef4444;
+   
+    --profile-bg:linear-gradient(135deg,#ffffff,#f8fafc);
+
+--profile-border:color-mix(in srgb, var(--primary) 15%, transparent);
+
+--profile-shadow:0 6px 18px rgba(15,23,42,.08),
+                 0 2px 6px rgba(15,23,42,.04);
+}
+
+
+/* =========================
+   DARK THEME
+========================= */
+
+body.dark{
+
+    --bg:#111827;
+
+    --card:#1f2937;
+
+    --text:#f3f4f6;
+
+    --text-secondary:#cbd5e1;
+
+    --border:#374151;
+
+    --input:#374151;
+
+    --table-head:#374151;
+
+    --shadow:0 5px 15px rgba(0,0,0,.35);
+
+    --success:#22c55e;
+
+    --warning:#fbbf24;
+
+    --danger:#f87171;
+
+    --profile-bg:linear-gradient(135deg,#1f2937,#111827);
+
+--profile-border:#374151;
+
+--profile-shadow:0 8px 20px rgba(0,0,0,.35);
+
+
+}
+/* =========================
+   ACCENT COLORS
+========================= */
+
+body[data-accent="blue"]{
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+}
+
+body[data-accent="green"]{
+    --primary:#16a34a;
+    --primary-dark:#15803d;
+}
+
+body[data-accent="purple"]{
+    --primary:#7c3aed;
+    --primary-dark:#6d28d9;
+}
+
+body[data-accent="orange"]{
+    --primary:#ea580c;
+    --primary-dark:#c2410c;
+}
+/* =========================
+   GLOBAL
+========================= */
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    transition:.3s;
+
+}
+
+/* =========================
+   COMMON
+========================= */
+
+input,
+textarea,
+select{
+
+    background:var(--input);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:var(--text-secondary);
+
+}
+
+table{
+
+    background:var(--card);
+
+    color:var(--text);
+
+}
+
+th{
+
+    background:var(--table-head);
+
+}
+
+td{
+
+    border-color:var(--border);
+
+}
+
+button{
+
+    transition:.3s;
+
+}
+
+.modal{
+
+    background:var(--card);
+
+    color:var(--text);
+
+}

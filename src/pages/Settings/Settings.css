@@ -1,0 +1,227 @@
+.settings{
+    max-width:700px;
+    margin:auto;
+    color:var(--text);
+    padding:20px;
+}
+
+.settings h2{
+    margin-bottom:20px;
+    color:var(--text);
+    font-size:28px;
+}
+
+.setting-card{
+    background:var(--card);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.setting-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.setting-row:last-child{
+    border-bottom:none;
+}
+
+.setting-row span{
+    font-weight:600;
+}
+
+.setting-row select,
+.setting-row .switch{
+    margin-left:auto;
+}
+
+.setting-row select{
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    background:var(--card);
+    color:var(--text);
+    outline:none;
+    transition:.3s;
+}
+
+.setting-row select:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(30,136,229,.15);
+}
+
+/* Switch */
+.switch{
+    position:relative;
+    width:50px;
+    height:26px;
+    flex-shrink:0;
+}
+
+.switch input{
+    display:none;
+}
+
+.slider{
+    position:absolute;
+    inset:0;
+    background:#9ca3af;
+    border-radius:26px;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.slider::before{
+    content:"";
+    position:absolute;
+    width:20px;
+    height:20px;
+    left:3px;
+    top:3px;
+    background:#fff;
+    border-radius:50%;
+    transition:.3s;
+}
+
+input:checked + .slider{
+    background:var(--primary);
+}
+
+input:checked + .slider::before{
+    transform:translateX(24px);
+}
+
+.save-btn{
+    margin-top:20px;
+    width:100%;
+    padding:12px;
+    border:none;
+    background:var(--primary);
+    color:#fff;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.save-btn:hover{
+    background:var(--primary-dark);
+}
+
+.save-btn:active{
+    transform:scale(.98);
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:992px){
+    .settings{
+        padding:18px;
+    }
+
+    .setting-card{
+        padding:20px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+    .settings{
+        padding:15px;
+    }
+
+    .settings h2{
+        font-size:24px;
+        margin-bottom:18px;
+    }
+
+    .setting-card{
+        padding:18px;
+        border-radius:10px;
+    }
+
+    .setting-row{
+        padding:15px 0;
+    }
+
+    .setting-row span{
+        font-size:15px;
+    }
+
+    .setting-row select{
+        padding:9px;
+        font-size:14px;
+    }
+
+    .switch{
+        width:45px;
+        height:24px;
+    }
+
+    .save-btn{
+        font-size:14px;
+        padding:11px;
+    }
+}
+
+/* ================= SMALL MOBILE (480px) ================= */
+
+@media(max-width:480px){
+    .settings{
+        padding:12px;
+    }
+
+    .settings h2{
+        font-size:22px;
+        margin-bottom:16px;
+    }
+
+    .setting-card{
+        padding:16px;
+        border-radius:8px;
+        box-shadow:0 3px 10px rgba(0,0,0,.05);
+    }
+
+    .setting-row{
+        padding:14px 0;
+    }
+
+    .setting-row span{
+        font-size:14px;
+    }
+
+    .setting-row select{
+        padding:8px;
+        font-size:13px;
+    }
+
+    .switch{
+        width:42px;
+        height:22px;
+    }
+
+    .slider::before{
+        width:18px;
+        height:18px;
+        left:2px;
+        top:2px;
+    }
+
+    input:checked + .slider::before{
+        transform:translateX(20px);
+    }
+
+    .save-btn{
+        font-size:13px;
+        padding:10px;
+    }
+}

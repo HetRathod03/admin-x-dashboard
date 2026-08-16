@@ -1,0 +1,202 @@
+.order-chart{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    box-sizing:border-box;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:24px;
+}
+
+.order-chart:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 45px rgba(0,0,0,.15);
+}
+
+/* ================= HEADER ================= */
+
+.order-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:24px;
+}
+
+.order-chart-title{
+    font-size:26px;
+    font-weight:700;
+    color:var(--text);
+    margin:0;
+}
+
+.order-subtitle{
+    margin-top:6px;
+    font-size:14px;
+    color:var(--text-secondary);
+}
+
+/* ================= TOTAL BOX ================= */
+
+.order-total{
+    width:90px;
+    height:90px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color:#fff;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    font-size:28px;
+    font-weight:700;
+
+    box-shadow:0 12px 24px rgba(37,99,235,.25);
+}
+
+.order-total span{
+    font-size:12px;
+    font-weight:500;
+    margin-top:4px;
+    opacity:.9;
+}
+
+/* ================= PIE CHART ================= */
+
+.pie-chart-box{
+    width:100%;
+    height:340px;
+    position:relative;
+}
+
+/* ================= Teblet ================= */
+
+@media(max-width:768px){
+
+    .order-chart{
+        padding:18px;
+         width:100%;
+        max-width:100%;
+        min-width:0;
+        box-sizing:border-box;
+        overflow:hidden;
+    }
+
+    .order-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+    }
+
+    .order-chart-title{
+        font-size:22px;
+    }
+
+    .order-subtitle{
+        font-size:13px;
+    }
+
+    .order-total{
+        width:75px;
+        height:75px;
+        font-size:22px;
+    }
+
+    .pie-chart-box{
+        height:280px;
+    }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:480px){
+
+  .order-chart{
+    padding:15px;
+    width:100%;
+    min-width:0;
+    box-sizing:border-box;
+
+  }
+
+  .order-chart-title{
+    font-size:20px;
+  }
+
+  .order-total{
+    font-size:22px;
+  }
+
+  .order-btn{
+    font-size:13px;
+    padding:10px;
+  }
+
+  .order-growth{
+    font-size:13px;
+    padding:8px;
+  }
+
+  .pie-chart-box{
+    width:100%;
+    height:240px;
+  }
+
+}
+/* ================= TABLET / FOLD DEVICES ================= */
+
+@media (min-width:769px) and (max-width:1280px){
+
+    .order-chart{
+        width:100%;
+        max-width:100%;
+        min-width:0;
+        box-sizing:border-box;
+        overflow:hidden;
+    }
+
+    .pie-chart-box{
+        width:100%;
+        max-width:100%;
+        height:300px;
+        overflow:hidden;
+    }
+
+    .order-chart canvas{
+        max-width:100% !important;
+    }
+
+}
+
+/* =================  SMALL MOBILE ================= */
+
+@media (min-width:481px) and (max-width:600px){
+
+    .order-chart{
+        width:100%;
+        max-width:100%;
+        min-width:0;
+        box-sizing:border-box;
+        overflow:hidden;
+    }
+
+    .pie-chart-box{
+        width:100%;
+        max-width:100%;
+        overflow:hidden;
+    }
+
+    .order-chart canvas{
+        max-width:100% !important;
+    }
+}

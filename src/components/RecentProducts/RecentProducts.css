@@ -1,0 +1,355 @@
+.recent-products{
+    margin-top:35px;
+    background:var(--card);
+    color:var(--text);
+    padding:24px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.35s ease;
+}
+
+.recent-products:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 45px rgba(0,0,0,.15);
+}
+
+/* ================= HEADER ================= */
+
+.recent-products-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    margin-bottom:24px;
+}
+
+.recent-products-title{
+    font-size:26px;
+    font-weight:700;
+    color:var(--text);
+    margin:0;
+}
+
+.recent-products-subtitle{
+    margin-top:6px;
+    font-size:14px;
+    color:var(--text-secondary);
+}
+
+.view-products-btn{
+    padding:10px 18px;
+    border:none;
+    border-radius:10px;
+    background:var(--primary);
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    text-decoration:none;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    white-space:nowrap;
+}
+
+.view-products-btn:hover{
+    transform:translateY(-2px);
+    opacity:.95;
+}
+
+
+
+/* ================= DESKTOP TABLE ================= */
+.recent-products-table-wrapper{
+    width:100%;
+    overflow-x:auto;
+}
+
+.recent-products-table{
+    width:100%;
+    border-collapse:collapse;
+    display:table;
+}
+
+.recent-products-table th{
+    background:rgba(37,99,235,.08);
+    color:var(--text);
+    padding:15px;
+    text-align:left;
+    border-bottom:1px solid var(--border);
+    font-weight:600;
+    font-size:14px;
+}
+
+.recent-products-table td{
+    padding:15px;
+    color:var(--text);
+    border-bottom:1px solid var(--border);
+    font-size:14px;
+}
+
+.recent-products-table tbody tr{
+    transition:.3s;
+}
+
+.recent-products-table tbody tr:hover{
+    background:rgba(37,99,235,.08);
+}
+
+.recent-product-image{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    border-radius:8px;
+    border:1px solid var(--border);
+}
+
+/* ================= MOBILE CARD LIST ================= */
+
+.recent-products-list{
+    display:none;
+    flex-direction:column;
+    gap:12px;
+}
+
+.product-card-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:14px;
+    border-radius:16px;
+    background:var(--card);
+    border:1px solid transparent;
+    transition:.3s;
+}
+
+.product-card-item:hover{
+    background:rgba(37,99,235,.05);
+    border-color:rgba(37,99,235,.15);
+}
+
+.product-card-image{
+    width:70px;
+    height:70px;
+    min-width:70px;
+    object-fit:cover;
+    border-radius:12px;
+    border:1px solid var(--border);
+}
+
+.product-card-content{
+    flex:1;
+}
+
+.product-card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:8px;
+    margin-bottom:8px;
+}
+
+.product-card-title{
+    margin:0;
+    font-size:15px;
+    font-weight:600;
+    color:var(--text);
+    line-height:1.4;
+    flex:1;
+}
+
+.product-card-id{
+    font-size:12px;
+    color:var(--text-secondary);
+    white-space:nowrap;
+    background:rgba(37,99,235,.08);
+    padding:4px 8px;
+    border-radius:6px;
+}
+
+.product-card-details{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+}
+
+.product-category{
+    font-size:12px;
+    color:var(--text-secondary);
+    background:rgba(59,130,246,.08);
+    padding:4px 10px;
+    border-radius:6px;
+    font-weight:500;
+}
+
+.product-price{
+    font-size:14px;
+    font-weight:600;
+    color:var(--primary);
+}
+.recent-products-table td:first-child{
+    font-weight:700;
+    color:var(--text);
+}
+
+/* ================= TABLET RESPONSIVE ================= */
+
+@media(max-width:1024px){
+    
+    .recent-products{
+        padding:20px;
+    }
+
+    .recent-products-table th,
+    .recent-products-table td{
+        padding:12px;
+        font-size:13px;
+    }
+
+    .recent-product-image{
+        width:50px;
+        height:50px;
+    }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .recent-products{
+        padding:18px;
+        margin-top:25px;
+    }
+
+    .recent-products-title{
+        font-size:22px;
+    }
+
+    .recent-products-subtitle{
+        font-size:13px;
+    }
+
+    .recent-products-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+    }
+
+        .view-products-btn{
+        width:100%;
+    }
+
+    /* Hide table on mobile */
+    .recent-products-table{
+        display:none;
+    }
+
+    /* Show card list on mobile */
+    .recent-products-list{
+        display:flex;
+    }
+
+    .product-card-item{
+        padding:12px;
+        gap:10px;
+    }
+
+    .product-card-image{
+        width:65px;
+        height:65px;
+        min-width:65px;
+    }
+
+    .product-card-top{
+        gap:6px;
+        margin-bottom:6px;
+    }
+
+    .product-card-title{
+        font-size:14px;
+    }
+
+    .product-card-id{
+        font-size:11px;
+        padding:3px 6px;
+    }
+
+    .product-category{
+        font-size:11px;
+        padding:3px 8px;
+    }
+
+    .product-price{
+        font-size:13px;
+        color:#16a34a;
+        font-weight:700;
+
+    }
+    .recent-products-table-wrapper{
+    display:none;
+}
+
+.recent-products-list{
+    display:flex;
+}
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:480px){
+
+    .recent-products{
+        padding:15px;
+        margin-top:20px;
+    }
+
+    .recent-products-title{
+        font-size:20px;
+    }
+
+    .recent-products-subtitle{
+        font-size:12px;
+    }
+
+    .recent-products-header{
+        margin-bottom:15px;
+    }
+
+    .product-card-item{
+        padding:10px;
+        gap:10px;
+    }
+
+    .product-card-image{
+        width:60px;
+        height:60px;
+        min-width:60px;
+    }
+
+    .product-card-title{
+        font-size:13px;
+    }
+
+    .product-card-details{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .product-category{
+        font-size:10px;
+    }
+
+    .product-price{
+        font-size:12px;
+    }
+
+}
+@media (min-width: 769px) {
+    .recent-products-table td {
+        color: var(--text);
+        font-weight: 500;
+    }
+}
