@@ -186,5 +186,7 @@
     .dashboard-card-footer{
         flex-wrap:wrap;
     }
-
+    .revenue-value {
+        position: static;
+    }
 }
