@@ -34,18 +34,85 @@ const Dashboard = () => {
   const { symbol } = useCurrency();
   const [orders, setOrders] = useState([]);
 
-  useEffect(() => {
-  const loadData = () => {
+ useEffect(() => {
+  const loadData = async () => {
     try {
-      const savedOrders = localStorage.getItem("adminx_orders");
-      const savedCustomers = localStorage.getItem("adminx_customers");
+      // ================= CUSTOMERS =================
 
-      setOrders(savedOrders ? JSON.parse(savedOrders) : []);
-      setCustomers(savedCustomers ? JSON.parse(savedCustomers) : []);
+      let savedCustomers = localStorage.getItem("adminx_customers");
+
+      if (savedCustomers) {
+        setCustomers(JSON.parse(savedCustomers));
+      } else {
+        const customerRes = await fetch("https://dummyjson.com/users");
+        const customerData = await customerRes.json();
+
+        localStorage.setItem(
+          "adminx_customers",
+          JSON.stringify(customerData.users),
+        );
+
+        setCustomers(customerData.users);
+      }
+
+      // ================= ORDERS =================
+
+      let savedOrders = localStorage.getItem("adminx_orders");
+
+      if (savedOrders) {
+        setOrders(JSON.parse(savedOrders));
+      } else {
+        const [orderRes, userRes] = await Promise.all([
+          fetch("https://dummyjson.com/carts"),
+          fetch("https://dummyjson.com/users"),
+        ]);
+
+        const orderData = await orderRes.json();
+        const userData = await userRes.json();
+
+        const formattedOrders = orderData.carts.map((cart) => {
+          const user = userData.users.find(
+            (user) => user.id === cart.userId,
+          );
+
+          return {
+            id: cart.id,
+            userId: cart.userId,
+
+            customer: user
+              ? `${user.firstName} ${user.lastName}`
+              : `Customer ${cart.userId}`,
+
+            products: cart.products.map((product) => ({
+              id: product.id,
+              title: product.title,
+              quantity: product.quantity,
+              price: product.price,
+            })),
+
+            quantity: cart.totalQuantity,
+            total: cart.discountedTotal,
+
+            status:
+              cart.id % 3 === 0
+                ? "Delivered"
+                : cart.id % 2 === 0
+                  ? "Processing"
+                  : "Pending",
+          };
+        });
+
+        localStorage.setItem(
+          "adminx_orders",
+          JSON.stringify(formattedOrders),
+        );
+
+        setOrders(formattedOrders);
+      }
     } catch (error) {
       console.error("Failed to load dashboard data:", error);
-      setOrders([]);
       setCustomers([]);
+      setOrders([]);
     } finally {
       setTimeout(() => {
         setLoading(false);
@@ -63,6 +130,7 @@ const Dashboard = () => {
     window.removeEventListener("customersUpdated", loadData);
   };
 }, []);
+
   const totalRevenue = orders.reduce((total, order) => total + order.total, 0);
   const formatCurrency = (amount) => {
     if (amount >= 10000000) {
