@@ -29,53 +29,40 @@ import "./Dashboard.css";
 const Dashboard = () => {
   const { products } = useProducts();
   const [customers, setCustomers] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const { symbol } = useCurrency();
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    const loadOrders = () => {
-      try {
-        const savedOrders = localStorage.getItem("adminx_orders");
+  const loadData = () => {
+    try {
+      const savedOrders = localStorage.getItem("adminx_orders");
+      const savedCustomers = localStorage.getItem("adminx_customers");
 
-        setOrders(savedOrders ? JSON.parse(savedOrders) : []);
-      } catch (error) {
-        console.error("Failed to load orders:", error);
-        setOrders([]);
-      }
-    };
+      setOrders(savedOrders ? JSON.parse(savedOrders) : []);
+      setCustomers(savedCustomers ? JSON.parse(savedCustomers) : []);
+    } catch (error) {
+      console.error("Failed to load dashboard data:", error);
+      setOrders([]);
+      setCustomers([]);
+    } finally {
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
+    }
+  };
 
-    loadOrders();
+  loadData();
 
-    window.addEventListener("ordersUpdated", loadOrders);
+  window.addEventListener("ordersUpdated", loadData);
+  window.addEventListener("customersUpdated", loadData);
 
-    return () => {
-      window.removeEventListener("ordersUpdated", loadOrders);
-    };
-  }, []);
-
-  useEffect(() => {
-    const loadCustomers = () => {
-      try {
-        const savedCustomers = localStorage.getItem("adminx_customers");
-
-        setCustomers(savedCustomers ? JSON.parse(savedCustomers) : []);
-      } catch (error) {
-        console.error("Failed to load customers:", error);
-        setCustomers([]);
-      }
-    };
-
-    loadCustomers();
-
-    window.addEventListener("customersUpdated", loadCustomers);
-
-    return () => {
-      window.removeEventListener("customersUpdated", loadCustomers);
-    };
-  }, []);
-
+  return () => {
+    window.removeEventListener("ordersUpdated", loadData);
+    window.removeEventListener("customersUpdated", loadData);
+  };
+}, []);
   const totalRevenue = orders.reduce((total, order) => total + order.total, 0);
   const formatCurrency = (amount) => {
     if (amount >= 10000000) {

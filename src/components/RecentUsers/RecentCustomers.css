@@ -329,6 +329,7 @@
         font-size: 11px;
     }
 }
+
 @media (min-width: 769px) {
     .recent-customers-table td {
         color: var(--text);
