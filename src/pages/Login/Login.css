@@ -64,3 +64,19 @@
 .login-btn:hover{
     filter:brightness(.9);
 }
+.demo-credentials {
+  margin-bottom: 20px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--input);
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.demo-credentials p {
+  margin: 4px 0;
+}
+
+.demo-credentials strong {
+  color: var(--primary);
+}

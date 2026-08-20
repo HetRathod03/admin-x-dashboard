@@ -77,6 +77,11 @@ const Login = () => {
       <form className="login-card" onSubmit={handleSubmit}>
         <h2>Admin Login</h2>
 
+          {/* Demo Login Credentials */}
+  <div className="demo-credentials">
+    <p><strong>Demo Username:</strong> emilys</p>
+    <p><strong>Demo Password:</strong> emilyspass</p>
+  </div>
         <div className="form-group">
           <label>Username</label>
 
